@@ -21,7 +21,7 @@ from src.utils import save_object,evaluate_models
 
 @dataclass
 class ModelTrainerConfig:
-    trained_madel_file_path=os.path.join("artifacts","madel.pk1")
+    trained_model_file_path=os.path.join("artifacts","model.pkl")
 
 class ModelTrainer:
     def __init__(self):
@@ -102,7 +102,7 @@ class ModelTrainer:
             logging.info(f"Best found model on both training testing dataset")
 
             save_object(
-                file_path=self.model_trainer_config.trained_madel_file_path,
+                file_path=self.model_trainer_config.trained_model_file_path,
                 obj=best_model
             )
 
